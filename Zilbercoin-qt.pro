@@ -383,16 +383,6 @@ isEmpty(BOOST_INCLUDE_PATH) {
     macx:BOOST_INCLUDE_PATH = /opt/local/include
 }
 
-isEmpty(QRENCODE_INCLUDE_PATH) {
-    win32:QRENCODE_INCLUDE_PATH = /mnt/qrencode-3.4.4
-}
-
-isEmpty(QRENCODE_LIB_PATH) {
-    win32:QRENCODE_LIB_PATH = /mnt/qrencode-3.4.4/.libs
-}
-
-
-
 windows:DEFINES += WIN32
 windows:RC_FILE = src/qt/res/bitcoin-qt.rc
 

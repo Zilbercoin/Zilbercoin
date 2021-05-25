@@ -15,6 +15,6 @@ BDB_INCLUDE_PATH=$MXE_INCLUDE_PATH \
 BDB_LIB_PATH=$MXE_LIB_PATH \
 MINIUPNPC_INCLUDE_PATH=$MXE_INCLUDE_PATH \
 MINIUPNPC_LIB_PATH=$MXE_LIB_PATH \
-QMAKE_LRELEASE=/mnt/mxe/usr/i686-w64-mingw32.static/qt5/bin/lrelease "USE_LEVELDB=1" "USE_UPNP=1" "USE_IPV6=1" "USE_QRCODE=1" Zilbercoin-qt.pro
+QMAKE_LRELEASE=/mnt/mxe/usr/i686-w64-mingw32.static/qt5/bin/lrelease "USE_DBUS=1" "USE_QRENCODE=1" Zilbercoin-qt.pro
 
 make -f Makefile.Release
