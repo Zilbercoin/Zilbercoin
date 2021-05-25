@@ -1,0 +1,26 @@
+Tutorial - Compile Linux wallet on Ubuntu Server 18.04
+Compile a wallet for Ubuntu Linux on Ubuntu Server 18.04 with the following tutorial.
+
+Update your Ubuntu server with the following command:
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+Install the required dependencies with the following command:
+
+sudo apt-get install build-essential libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libdb-dev libdb++-dev libminiupnpc-dev curl libssl1.0-dev libboost-all-dev qt5-default libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev -y
+
+Create your source code directory with the following commands:
+
+cd ~/
+mkdir source_code
+cd source_code
+
+Download the source code
+
+Type the following commands to compile your wallet for Ubuntu Linux.
+
+cd src/
+make -f makefile.unix RELEASE=1
+cd ../
+qmake RELEASE=1
+make STATIC=1
