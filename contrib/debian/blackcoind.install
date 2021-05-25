@@ -1,0 +1,2 @@
+debian/bin/zilbercoind usr/bin
+src/zilbercoind usr/lib/zilbercoin

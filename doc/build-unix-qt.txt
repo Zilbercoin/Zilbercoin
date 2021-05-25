@@ -1,0 +1,23 @@
+Update your Ubuntu server with the following command:
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+Install the required dependencies with the following command:
+
+sudo apt-get install build-essential libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libdb-dev libdb++-dev libminiupnpc-dev curl libssl1.0-dev libboost-all-dev qt5-default libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev git -y
+
+Download the source code of your coin with the following command:
+
+git clone https://github.com/Zilbercoin-Project
+cd Zilbercoin-project/
+
+Type the following commands to compile your wallet for Ubuntu Linux.
+
+cd src/
+make -f makefile.unix RELEASE=1
+cd ../
+qmake RELEASE=1
+make STATIC=1
+
+The compiled wallet for Ubuntu Linux is located in the directory release, the daemon is located in the directory src.
+Testing on Ubuntu 18.04 LTS
