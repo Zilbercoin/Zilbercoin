@@ -42,7 +42,7 @@ set<pair<COutPoint, unsigned int> > setStakeSeen;
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
 CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 
-int nStakeMinConfirmations = 409; //409 confirmation
+int nStakeMinConfirmations = 400; //400 confirmation
 unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
