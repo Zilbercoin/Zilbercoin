@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2021 The Zilbercoin developers
+// Copyright (c) 2021 Zilbercoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,6 +19,7 @@ namespace Checkpoints
 {
     typedef std::map<int, uint256> MapCheckpoints;
 
+
     //
     // What makes a good checkpoint block?
     // + Is surrounded by blocks with reasonable timestamps
@@ -26,11 +27,11 @@ namespace Checkpoints
     //    timestamp before)
     // + Contains no strange transactions
     //
-        static MapCheckpoints mapCheckpoints =
+    static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        ( 100,  uint256("0x943c95a1c96c48ab7454d65d8ce56ab6415f49340aacfd7744c32146f40bf44f") ) // Point 100 block
-        ( 400,  uint256("0x83fc7da4ad6a23d4ce4da247e787aeafd90dcfb517bf46a450cbf772f1de73b0") ) // Point 400 block
-        ( 524,  uint256("0x30aedff7e24d3cd855fcfe1842e2dda1ba84ad054fb874230be2ed3291d05072") ) // Point 524 block
+        ( 100,	uint256("0x943c95a1c96c48ab7454d65d8ce56ab6415f49340aacfd7744c32146f40bf44f") ) // Point 1
+        ( 400,	uint256("0x83fc7da4ad6a23d4ce4da247e787aeafd90dcfb517bf46a450cbf772f1de73b0") ) // Point 2
+        ( 600,	uint256("0xe0d922897b7b4c2d4fcf5a0ef1c1bfa0b5598885977acbfb1772a60614017b07") ) // Point 3
     ;
 
     // TestNet has no checkpoints

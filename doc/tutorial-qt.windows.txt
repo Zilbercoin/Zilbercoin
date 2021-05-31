@@ -1,0 +1,128 @@
+Tutorial - Compile Zilbercoin-QT Windows wallet on Ubuntu Server 18.04
+Compile a wallet for Microsoft Windows on Ubuntu Server 18.04 with the following tutorial.
+
+Update your Ubuntu server with the following command:
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+Install the required dependencies with the following command:
+
+sudo apt-get install p7zip-full autoconf automake autopoint bash bison bzip2 cmake curl flex gettext git g++ gperf libgtk2.0-dev intltool libffi-dev libtool libtool-bin libltdl-dev libssl-dev libxml-parser-perl make openssl patch perl pkg-config python ruby scons sed unzip wget xz-utils lzip python-pip g++-multilib libc6-dev-i386 git libdb-dev -y
+
+Clone the MXE repository with the following commands:
+
+cd /mnt
+sudo git clone https://github.com/mxe/mxe.git
+
+Compile Boost with the following commands:
+
+cd /mnt/mxe
+sudo make MXE_TARGETS="i686-w64-mingw32.static" boost
+
+Compile QT5 with the following commands:
+
+cd /mnt/mxe
+sudo make MXE_TARGETS="i686-w64-mingw32.static" qttools
+
+Install Berkeley DB with the following commands:
+
+cd /mnt
+sudo wget https://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
+sudo tar zxvf db-4.8.30.tar.gz
+
+Create a script to install Berkeley DB with the following commands:
+
+cd /mnt/db-4.8.30
+sudo touch compile-db.sh
+sudo chmod ugo+x compile-db.sh
+
+Open nano.
+
+sudo nano compile-db.sh -t
+
+Paste the following into nano.
+
+#!/bin/bash
+MXE_PATH=/mnt/mxe
+sed -i "s/WinIoCtl.h/winioctl.h/g" src/dbinc/win_db.h
+mkdir build_mxe
+cd build_mxe
+
+CC=$MXE_PATH/usr/bin/i686-w64-mingw32.static-gcc \
+CXX=$MXE_PATH/usr/bin/i686-w64-mingw32.static-g++ \
+../dist/configure \
+--disable-replication \
+--enable-mingw \
+--enable-cxx \
+--host x86 \
+--prefix=$MXE_PATH/usr/i686-w64-mingw32.static
+
+make
+make install
+
+Save the file with the keyboard shortcut ctrl + x.
+
+Compile Berkeley DB with the following command:
+
+sudo ./compile-db.sh
+
+Download and unpack MiniUPnP with the following commands:
+
+cd /mnt
+sudo wget http://miniupnp.free.fr/files/miniupnpc-1.9.tar.gz
+sudo tar zxvf miniupnpc-1.9.tar.gz
+
+Create a script to install MiniUPnP with the following commands:
+
+cd /mnt/miniupnpc-1.9
+sudo touch compile-upnp.sh
+sudo chmod ugo+x compile-upnp.sh
+
+Open nano.
+
+sudo nano compile-upnp.sh -t
+
+Paste the following into nano.
+
+#!/bin/bash
+MXE_PATH=/mnt/mxe
+CC=$MXE_PATH/usr/bin/i686-w64-mingw32.static-gcc \
+AR=$MXE_PATH/usr/bin/i686-w64-mingw32.static-ar \
+CFLAGS="-DSTATICLIB -I$MXE_PATH/usr/i686-w64-mingw32.static/include" \
+LDFLAGS="-L$MXE_PATH/usr/i686-w64-mingw32.static/lib" \
+make libminiupnpc.a
+mkdir $MXE_PATH/usr/i686-w64-mingw32.static/include/miniupnpc
+cp *.h $MXE_PATH/usr/i686-w64-mingw32.static/include/miniupnpc
+cp libminiupnpc.a $MXE_PATH/usr/i686-w64-mingw32.static/lib
+
+Save the file with the keyboard shortcut ctrl + x.
+
+Compile MiniUPnP with the following command:
+
+sudo ./compile-upnp.sh
+
+Compile OpenSSL with the following command:
+
+cd /mnt/mxe
+sudo make openssl1.0 MXE_PLUGIN_DIRS=plugins/examples/openssl1.0/
+
+Create your source code directory with the following commands:
+
+cd ~/
+mkdir source_code
+cd source_code
+
+Download the source code of your coin with the following command:
+
+git clone https://github.com/Zilbercoin/Zilbercoin.git
+cd Zilbercoin
+
+Compile Zilbercoin-QT:
+
+make -f Makefile.Release
+
+Type the following command to compile your wallet for Microsoft Windows.
+
+./autogenwin.sh
+
+The compiled wallet for Microsoft Windows is located in the directory release.

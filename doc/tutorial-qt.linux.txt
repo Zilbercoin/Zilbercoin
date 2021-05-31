@@ -1,4 +1,4 @@
-Tutorial - Compile Linux wallet on Ubuntu Server 18.04
+Tutorial - Compile Zilbercoin-QT Linux wallet on Ubuntu Server 18.04
 Compile a wallet for Ubuntu Linux on Ubuntu Server 18.04 with the following tutorial.
 
 Update your Ubuntu server with the following command:
