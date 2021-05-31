@@ -14,7 +14,9 @@ UNIX BUILD NOTES
 To Build
 --------
 
-cd src/
+git clone https://github.com/Zilbercoin/Zilbercoin.git
+
+cd Zilbercoin/src/
 make -f makefile.unix            # Headless zilbercoin
 
 See readme-qt.rst for instructions on building Zilbercoin QT,
