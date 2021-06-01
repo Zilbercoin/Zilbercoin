@@ -106,16 +106,14 @@ Compile OpenSSL with the following command:
 cd /mnt/mxe
 sudo make openssl1.0 MXE_PLUGIN_DIRS=plugins/examples/openssl1.0/
 
-Create your source code directory with the following commands:
-
-cd ~/
-mkdir source_code
-cd source_code
-
 Download the source code of your coin with the following command:
 
 git clone https://github.com/Zilbercoin/Zilbercoin.git
 cd Zilbercoin
+
+Open Makefile.Release
+Set the full path to the directory in variable SRCPATH
+Example "SRCPATH = /Zilbercoin"
 
 Compile Zilbercoin-QT:
 
