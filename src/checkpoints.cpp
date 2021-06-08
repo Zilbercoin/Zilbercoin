@@ -13,7 +13,7 @@
 #include "uint256.h"
 
 
-static const int nCheckpointSpan = 500;
+static const int nCheckpointSpan = 50;
 
 namespace Checkpoints
 {
@@ -29,9 +29,7 @@ namespace Checkpoints
     //
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        ( 100,	uint256("0x943c95a1c96c48ab7454d65d8ce56ab6415f49340aacfd7744c32146f40bf44f") ) // Point 1
-        ( 400,	uint256("0x83fc7da4ad6a23d4ce4da247e787aeafd90dcfb517bf46a450cbf772f1de73b0") ) // Point 2
-        ( 600,	uint256("0xe0d922897b7b4c2d4fcf5a0ef1c1bfa0b5598885977acbfb1772a60614017b07") ) // Point 3
+        ( 0,	uint256("0x000001019a44bdf465ade3332f140167f4331042bec5d3239a42b23cc7b1103a") ) // Point 1
     ;
 
     // TestNet has no checkpoints

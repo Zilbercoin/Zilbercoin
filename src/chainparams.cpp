@@ -86,7 +86,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xa0f45b5ac3d04bf9ebbe8c9b4e5f0d92a802b384379767988578adc58b5eac27"));
 
         vSeeds.push_back(CDNSSeedData("znode0.zilbercoin.org", "znode0.zilbercoin.org"));
-//        vSeeds.push_back(CDNSSeedData("znode1.zilbercoin.org", "znode1.zilbercoin.org"));
+        vSeeds.push_back(CDNSSeedData("znode1.zilbercoin.org", "znode1.zilbercoin.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 80);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 20);
@@ -96,7 +96,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 1000;
+        nLastPOWBlock = 200;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }

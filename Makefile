@@ -417,17 +417,17 @@ qmake_all: FORCE
 make_first: release-make_first debug-make_first  FORCE
 all: release-all debug-all  FORCE
 clean: release-clean debug-clean  FORCE
-	-$(DEL_FILE) /home/zilbernode/zilbercoin/zilbercoin-src/src/leveldb/libleveldb.a;
+	-$(DEL_FILE) /home/zilbernode/zilbercoin/Zilbercoin/src/leveldb/libleveldb.a;
 	-$(DEL_FILE) cd
-	-$(DEL_FILE) /home/zilbernode/zilbercoin/zilbercoin-src/src/leveldb
+	-$(DEL_FILE) /home/zilbernode/zilbercoin/Zilbercoin/src/leveldb
 	-$(DEL_FILE) ;
 	-$(DEL_FILE) clean
 distclean: release-distclean debug-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) /home/zilbernode/zilbercoin/zilbercoin-src/zilbercoin-qt_plugin_import.cpp
+	-$(DEL_FILE) /home/zilbernode/zilbercoin/Zilbercoin/zilbercoin-qt_plugin_import.cpp
 
-/home/zilbernode/zilbercoin/zilbercoin-src/src/leveldb/libleveldb.a: FORCE
-	cd /home/zilbernode/zilbercoin/zilbercoin-src/src/leveldb && CC=i686-w64-mingw32.static-gcc CXX=i686-w64-mingw32.static-g++ TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) OPT="-pipe -fno-keep-inline-dllexport -O2" libleveldb.a libmemenv.a && i686-w64-mingw32.static-ranlib /home/zilbernode/zilbercoin/zilbercoin-src/src/leveldb/libleveldb.a && i686-w64-mingw32.static-ranlib /home/zilbernode/zilbercoin/zilbercoin-src/src/leveldb/libmemenv.a
+/home/zilbernode/zilbercoin/Zilbercoin/src/leveldb/libleveldb.a: FORCE
+	cd /home/zilbernode/zilbercoin/Zilbercoin/src/leveldb && CC=i686-w64-mingw32.static-gcc CXX=i686-w64-mingw32.static-g++ TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) OPT="-pipe -fno-keep-inline-dllexport -O2" libleveldb.a libmemenv.a && i686-w64-mingw32.static-ranlib /home/zilbernode/zilbercoin/Zilbercoin/src/leveldb/libleveldb.a && i686-w64-mingw32.static-ranlib /home/zilbernode/zilbercoin/Zilbercoin/src/leveldb/libmemenv.a
 
 release-mocclean:
 	$(MAKE) -f $(MAKEFILE).Release mocclean
