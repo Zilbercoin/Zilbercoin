@@ -19,7 +19,7 @@ git clone https://github.com/Zilbercoin/Zilbercoin.git
 cd Zilbercoin/src/
 make -f makefile.unix            # Headless zilbercoin
 
-See readme-qt.rst for instructions on building Zilbercoin QT,
+See tutorial-qt.linux.txt for instructions on building Zilbercoin QT,
 the graphical zilbercoin.
 
 Dependencies
